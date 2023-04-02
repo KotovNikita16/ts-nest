@@ -15,6 +15,7 @@ import {ServeStaticModule} from "@nestjs/serve-static";
 import { ProfileModule } from './profile/profile.module';
 import * as path from 'path';
 import {Profile} from "./profile/profile.model";
+import {Files} from "./files/files.model";
 
 @Module({
     controllers: [], //регистрация контроллера
@@ -34,7 +35,7 @@ import {Profile} from "./profile/profile.model";
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
             database: process.env.POSTGRES_DB,
-            models: [User, Role, UserRole, TextBlock, Profile], //Обязательно добавлять новые модели
+            models: [User, Role, UserRole, TextBlock, Profile, Files], //Обязательно добавлять новые модели
             autoLoadModels: true
         }),
         UsersModule,
